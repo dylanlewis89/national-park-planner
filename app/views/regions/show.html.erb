@@ -1,0 +1,18 @@
+<h1><%= @region.name %></h1>
+
+<br/><br/>
+
+<%= link_to 'Edit', edit_region_path(@region) %> |
+<%= link_to 'All Regions', regions_path %>
+
+<br/><br/><br/><br/>
+<ol>
+<% @region.states.each do |state| %>
+<li><%= state.name %></li>
+<ul>
+<% state.parks.each do |park| %>
+<li><%= park.name %></li>
+<% end %>
+</ul><br/>
+<% end %>
+</ol>

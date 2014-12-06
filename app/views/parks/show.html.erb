@@ -1,0 +1,21 @@
+<h1><%= @park.name %></h1>
+
+<strong>State</strong>: <%= @park.state.name %>
+<br/>
+<strong>Region</strong>: <%= @park.state.region.name %>
+<br/>
+<a href="http://www.nps.gov/<%= @park.web_extension %>" target=_blank>Website</a>
+<br/><br/>
+
+
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'All Parks', parks_path %>
+
+<br/><br/><br/><br/>
+<strong>Ratings</strong>:
+<ul>
+	<% @park.ratings.each do |rating| %>
+	<li><strong><%= rating.activity.name %></strong>:
+		<%= rating.score %></li>
+	<% end %>
+</ul>

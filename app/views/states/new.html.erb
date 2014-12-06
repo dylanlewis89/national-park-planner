@@ -1,0 +1,26 @@
+<% if @state.id %>
+	<h1>Update State</h1>
+<% else %>
+	<h1>New State</h1>
+<% end %>
+
+<ol>
+<% @state.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+<% end %>
+</ol>
+
+<%= form_for(@state) do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :abbreviation %>
+	<%= f.text_field :abbreviation %>
+
+	<%= f.label :region_id %>
+	<%= f.collection_select :region_id, Region.all, :id, :name, include_blank: true %>
+
+	<%= f.submit :submit %>
+
+<% end %>

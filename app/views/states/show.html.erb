@@ -1,0 +1,16 @@
+<h1><%= @state.name %></h1>
+
+<strong>Region</strong>: <%= @state.region.name %>
+
+<br/><br/>
+
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'All States', states_path %>
+
+<br/><br/><br/><br/>
+<strong>National parks</strong>:
+<ul>
+<% @state.parks.each do |park| %>
+<li><%= park.name %></li>
+<% end %>
+</ul>

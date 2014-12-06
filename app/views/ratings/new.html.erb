@@ -1,0 +1,26 @@
+<% if @rating.id %>
+	<h1>Update Rating</h1>
+<% else %>
+	<h1>New Rating</h1>
+<% end %>
+
+<ol>
+<% @rating.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+<% end %>
+</ol>
+
+<%= form_for(@rating) do |f| %>
+	
+	<%= f.label :score %>
+	<%= f.text_field :score %>
+
+	<%= f.label :activity_id %>
+	<%= f.collection_select :activity_id, Activity.all, :id, :name %>
+
+	<%= f.label :park_id %>
+	<%= f.collection_select :park_id, Park.all, :id, :name %>
+
+	<%= f.submit :submit %>
+
+<% end %>

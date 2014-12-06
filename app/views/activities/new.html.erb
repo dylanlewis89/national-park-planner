@@ -1,0 +1,20 @@
+<% if @activity.id %>
+	<h1>Update Activity</h1>
+<% else %>
+	<h1>New Activity</h1>
+<% end %>
+
+<ol>
+<% @activity.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+<% end %>
+</ol>
+
+<%= form_for(@activity) do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit :submit %>
+
+<% end %>

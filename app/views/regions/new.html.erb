@@ -1,0 +1,20 @@
+<% if @region.id %>
+	<h1>Update Region</h1>
+<% else %>
+	<h1>New Region</h1>
+<% end %>
+
+<ol>
+<% @region.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+<% end %>
+</ol>
+
+<%= form_for(@region) do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit :submit %>
+
+<% end %>
