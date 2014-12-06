@@ -15,7 +15,7 @@
 <strong>Ratings</strong>:
 <ul>
 	<% @park.ratings.each do |rating| %>
-	<li><strong><%= rating.activity.name %></strong>:
+	<li><%= image_tag rating.activity.activity_image.url %><strong><%= rating.activity.name %></strong>:
 		<%= rating.score %></li>
 	<% end %>
 </ul>

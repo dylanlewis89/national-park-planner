@@ -1,11 +1,11 @@
 <h1><%= @activity.name %></h1>
+<%= image_tag @activity.activity_image.url %>
 
 <br/><br/>
 
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'All Activities', activities_path %>
-
 
 <br/><br/><br/><br/>
 <strong>Ratings</strong>:

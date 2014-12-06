@@ -50,6 +50,18 @@ class ParksController < ApplicationController
 		redirect_to parks_path
 	end
 
+	# GET
+	def input
+		@activities_list = Activity.all
+		@regions_list = Region.all.map {|region| [region.name, region.id]}
+	end
+
+	# GET with query string
+	def selector
+		@input_region = Region.find(params[:input_region])
+		@input_activities = Activity.find(params[:input_activities])
+	end
+
 	def park_params
 		params.require(:park).permit(:name, :web_extension, :state_id)
 	end

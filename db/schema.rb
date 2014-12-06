@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124025653) do
+ActiveRecord::Schema.define(version: 20141206184618) do
 
   create_table "activities", force: true do |t|
-    t.string "name"
+    t.string   "name"
+    t.string   "activity_image_file_name"
+    t.string   "activity_image_content_type"
+    t.integer  "activity_image_file_size"
+    t.datetime "activity_image_updated_at"
   end
 
   create_table "parks", force: true do |t|

@@ -1,0 +1,17 @@
+<%= form_tag(output_path, method: "get") do %>
+
+<h3>Select your region:</h3>
+<%= select_tag(:input_region, options_for_select(@regions_list)) %>
+<br/><br/>
+<h3>Select your activities:</h3>
+<% @activities_list.each do |activity| %>
+<div>
+<%= check_box_tag("input_activities[]", activity.id) %>
+<%= label_tag(activity.id, activity.name) %>
+</div>
+<% end %>
+<br/><br/>
+<%= submit_tag("Choose my park!") %>
+
+<% end %>
+

@@ -7,4 +7,15 @@ class Activity < ActiveRecord::Base
 		source: :park
 
 	validates :name, presence: true
+
+	has_attached_file(
+		:activity_image,
+		:styles => { 
+			:medium => "300x300>", 
+			:thumb => "100x100>" 
+		}, 
+		:default_url => "/images/:style/missing.png"
+	)
+	validates_attachment_content_type :activity_image, :content_type => /\Aimage\/.*\Z/
+
 end

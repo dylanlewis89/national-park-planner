@@ -1,0 +1,42 @@
+<% park_list = [] %>
+<% activity_list = @input_activities %>
+
+<% @input_region.states.each do |state| %>
+	<% state.parks.each do |park| %>
+		<% park_list.push(park) %>
+	<% end %>
+<% end %>
+
+<h3>Selected region:</h3>
+
+<%= @input_region.name %>:
+<ul>
+<% @input_region.states.each do |state| %>
+	<li><%= state.name %></li>
+<% end %>
+</ul>
+<br/>
+<h3>Selected activities:</h3>
+<ul>
+<% @input_activities.each do |activity| %>
+<li><%= activity.name %></li>
+<% end %>
+</ul>
+
+<% park_scores = {} %>
+
+<br/>
+<h3>Overall scores:</h3>
+<% park_list.each do |park| %>
+	<% park_score = 0 %>
+	<% activity_list.each do |activity| %>
+		<% park_score += (Rating.find_by(activity: activity, park: park).score.to_i)*2 %>
+	<% end %>
+	<% park_scores[park] = park_score %>
+<% end %>
+
+<ul>
+<% park_scores.each do |park, score| %>
+	<li><%= "#{park.name} : #{score}" %></li>
+<% end %>
+</ul>
