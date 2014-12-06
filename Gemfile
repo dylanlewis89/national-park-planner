@@ -47,4 +47,5 @@ end
 group :production do
 	# Use PostGress for production
 	gem 'pg'
+	gem 'rails_12factor'
 end
