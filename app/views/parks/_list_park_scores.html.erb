@@ -1,5 +1,11 @@
 <ul>
 <% list_park_scores.each do |park, info| %>
-	<li><strong><%= "#{park.name}" %></strong><%= ": " + "#{info[:score]}. This park -- in #{park.state.name} -- is especially well known for its #{info[:top_activity].name}." %><%= image_tag info[:top_activity].activity_image.url %></li>
+	<li>
+		<strong><%= "#{park.name}" %></strong><%= ": " + "#{info[:score]}" %>
+		<li><%= "This park is in #{park.state.name}." %></li>
+		<li><%= "You'll like it especially for its #{info[:top_activity].name}." %></li>
+		<%= image_tag info[:top_activity].activity_image.url %>
+	</li>
+	<br/><br/><br/>
 <% end %>
 </ul>
