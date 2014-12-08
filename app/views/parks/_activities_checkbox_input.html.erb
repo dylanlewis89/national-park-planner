@@ -1,0 +1,7 @@
+<% activities_checkbox_input.each do |activity| %>
+	<div>
+	<%= check_box_tag("input_activities[]", activity.id) %>
+	<%= image_tag activity.activity_image.url %>
+	<%= label_tag(activity.id, activity.name) %>
+	</div>
+<% end %>

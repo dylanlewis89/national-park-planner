@@ -11,11 +11,7 @@
 
 <br/>
 <h3>Overall scores:</h3>
-<% if @park_scores %>
-	<%= render partial: 'list_park_scores', object: @park_scores %>
-<% else %>
-	<%= render partial: 'list_parks', object: park_list %>
-<% end %>
+<%= render partial: 'list_park_scores', object: @park_scores %>
  
 <%# sorted_parks = [] -%>
 <%# park_scores.each do |park, info| -%>
