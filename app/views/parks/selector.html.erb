@@ -1,42 +1,24 @@
-<% park_list = [] %>
-<% activity_list = @input_activities %>
+<br/>
+<%= link_to 'Plan another park', planner_path %>
 
-<% @input_region.states.each do |state| %>
-	<% state.parks.each do |park| %>
-		<% park_list.push(park) %>
-	<% end %>
-<% end %>
 
-<h3>Selected region:</h3>
+<h3>Selected region: <%= @input_region.name %></h3>
 
-<%= @input_region.name %>:
-<ul>
-<% @input_region.states.each do |state| %>
-	<li><%= state.name %></li>
-<% end %>
-</ul>
+<%= render partial: 'list_region_states', object: @input_region %>
 <br/>
 <h3>Selected activities:</h3>
-<ul>
-<% @input_activities.each do |activity| %>
-<li><%= activity.name %></li>
-<% end %>
-</ul>
-
-<% park_scores = {} %>
+<%= render partial: 'list_activities', object: @input_activities %>
 
 <br/>
 <h3>Overall scores:</h3>
-<% park_list.each do |park| %>
-	<% park_score = 0 %>
-	<% activity_list.each do |activity| %>
-		<% park_score += (Rating.find_by(activity: activity, park: park).score.to_i)*2 %>
-	<% end %>
-	<% park_scores[park] = park_score %>
+<% if @park_scores %>
+	<%= render partial: 'list_park_scores', object: @park_scores %>
+<% else %>
+	<%= render partial: 'list_parks', object: park_list %>
 <% end %>
-
-<ul>
-<% park_scores.each do |park, score| %>
-	<li><%= "#{park.name} : #{score}" %></li>
-<% end %>
-</ul>
+ 
+<%# sorted_parks = [] -%>
+<%# park_scores.each do |park, info| -%>
+	<%# sorted_parks.push([park, info[:score]]) %>
+<%#- end -%>
+<%#- sorted_parks.sort! { |a,b| a[1] <=> b[1] } -%>

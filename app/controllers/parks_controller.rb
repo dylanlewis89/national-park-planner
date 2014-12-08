@@ -59,7 +59,30 @@ class ParksController < ApplicationController
 	# GET with query string
 	def selector
 		@input_region = Region.find(params[:input_region])
+		park_list = []
+		@input_region.states.each do |state|
+			state.parks.each do |park|
+				park_list.push(park)
+			end
+		end
+		
 		@input_activities = Activity.find(params[:input_activities])
+		@park_scores = {}
+		if @input_activities
+			park_list.each do |park|
+				park_score = 0
+				top_activity = ['',0]
+				@input_activities.each do |activity|
+					activity_score = Rating.find_by(activity: activity, park: park).score.to_i
+					park_score += (activity_score)*2
+					if activity_score > top_activity[1]
+						top_activity[0] = activity
+						top_activity[1] = activity_score
+					end
+				@park_scores[park] = {score: park_score, top_activity: top_activity[0]}
+				end
+			end
+		end
 	end
 
 	def park_params
