@@ -71,7 +71,7 @@ class ParksController < ApplicationController
 		else
 			@input_activities = Activity.all
 		end
-		@park_scores = {}
+		park_scores = {}
 		park_list.each do |park|
 			park_score = 0
 			top_activity = ['',0]
@@ -82,9 +82,10 @@ class ParksController < ApplicationController
 					top_activity[0] = activity
 					top_activity[1] = activity_score
 				end
-			@park_scores[park] = {score: park_score, top_activity: top_activity[0]}
+			park_scores[park] = {score: park_score, top_activity: top_activity[0]}
 			end
 		end
+		@sorted_parks = park_scores.sort_by { |a,b| b[:score] }.reverse[0..2]
 	end
 
 	def park_params

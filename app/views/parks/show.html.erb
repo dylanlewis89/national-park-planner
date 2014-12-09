@@ -1,5 +1,8 @@
 <h1><%= @park.name %></h1>
 
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'All Parks', parks_path %>
+<br/><br/>
 <strong>State</strong>: <%= @park.state.name %>
 <br/>
 <strong>Region</strong>: <%= @park.state.region.name %>
@@ -8,8 +11,7 @@
 <br/><br/>
 
 
-<%= link_to 'Edit', edit_park_path(@park) %> |
-<%= link_to 'All Parks', parks_path %>
+<%= render partial: 'google_map', locals: {search_string: "#{@park.name} national park, #{@park.state.name}", width: 600, height: 450} %>
 
 <br/><br/><br/><br/>
 <strong>Ratings</strong>:
