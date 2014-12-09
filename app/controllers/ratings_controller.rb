@@ -24,7 +24,6 @@ class RatingsController < ApplicationController
 	# GET /ratings/:id/edit
 	def edit
 		@rating = Rating.find(params[:id])
-		render "new"
 	end
 
 	# PUT /ratings/:id

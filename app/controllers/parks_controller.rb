@@ -8,6 +8,7 @@ class ParksController < ApplicationController
 	# GET /parks/:id
 	def show
 		@park = Park.find(params[:id])
+		@park_ratings_sorted = @park.ratings.sort {|a,b| a.score <=> b.score}.reverse
 	end
 
 	# GET /parks/new
@@ -29,7 +30,7 @@ class ParksController < ApplicationController
 	# GET /parks/:id/edit
 	def edit
 		@park = Park.find(params[:id])
-		render "new"
+		@park_ratings_sorted = @park.ratings.sort {|a,b| a.score <=> b.score}.reverse
 	end
 
 	# PUT /parks/:id

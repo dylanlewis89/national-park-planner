@@ -1,0 +1,14 @@
+<%= form_for(park_form) do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :web_extension %>
+	<%= f.text_field :web_extension %>
+
+	<%= f.label :state_id %>
+	<%= f.collection_select :state_id, State.all, :id, :name %>
+
+	<%= f.submit :submit %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Update Park</h1>
+
+<%= render partial: 'shared/display_errors', object: @park %>
+
+<%= render partial: 'park_form', object: @park %>
+<br/><br/>
+<%= render partial: 'list_park_ratings', locals: {park_ratings: @park_ratings_sorted, edit: true} %>

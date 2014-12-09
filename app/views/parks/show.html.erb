@@ -14,10 +14,5 @@
 <%= render partial: 'google_map', locals: {search_string: "#{@park.name} national park, #{@park.state.name}", width: 600, height: 450} %>
 
 <br/><br/><br/><br/>
-<strong>Ratings</strong>:
-<ul>
-	<% @park.ratings.each do |rating| %>
-	<li><%= image_tag rating.activity.activity_image.url %><strong><%= rating.activity.name %></strong>:
-		<%= rating.score %></li>
-	<% end %>
-</ul>
+
+<%= render partial: 'list_park_ratings', locals: {park_ratings: @park_ratings_sorted, edit: false} %>

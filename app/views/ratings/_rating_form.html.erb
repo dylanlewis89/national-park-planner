@@ -1,0 +1,36 @@
+<%= form_for(rating) do |f| %>
+	<div>	
+		<%= f.label :score %>
+		<%= f.text_field :score %>
+	</div>
+	<% if edit_rating_factors %>
+		<br/>
+		<div>
+			<%= f.label :activity_id %>
+			<%= f.collection_select :activity_id, Activity.all, :id, :name %>
+		</div>
+		<br/>
+		<div>
+			<%= f.label :park_id %>
+			<%= f.collection_select :park_id, Park.all, :id, :name %>
+		</div>
+	<% end %>
+	<br/>
+	<div>
+		<%= f.submit :submit %>
+	</div>
+<% end %>
+<% if not edit_rating_factors %>
+	<br/>
+	<div>
+		<strong>Activity:</strong>
+		<%= rating.activity.name %>&nbsp&nbsp&nbsp<%= link_to "Show all", activity_path(rating.activity) %>
+	</div>
+	<br/>
+	<div>
+		<strong>Park:</strong>
+		<%= rating.park.name %>&nbsp&nbsp&nbsp<%= link_to "Show all", park_path(rating.park) %>
+	</div>
+	<br/>
+	<div>
+<% end %>

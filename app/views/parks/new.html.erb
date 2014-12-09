@@ -1,26 +1,5 @@
-<% if @park.id %>
-	<h1>Update Park</h1>
-<% else %>
-	<h1>New Park</h1>
-<% end %>
+<h1>New Park</h1>
 
-<ol>
-<% @park.errors.full_messages.each do |error| %>
-	<li><%= error %></li>
-<% end %>
-</ol>
+<%= render partial: 'shared/display_errors', object: @park %>
 
-<%= form_for(@park) do |f| %>
-
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-
-	<%= f.label :web_extension %>
-	<%= f.text_field :web_extension %>
-
-	<%= f.label :state_id %>
-	<%= f.collection_select :state_id, State.all, :id, :name %>
-
-	<%= f.submit :submit %>
-
-<% end %>
+<%= render partial: 'park_form', object: @park %>

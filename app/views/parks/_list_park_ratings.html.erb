@@ -1,0 +1,9 @@
+<strong>Ratings</strong>:<br/><br/>
+<% park_ratings.each do |rating| %>
+	<%= image_tag rating.activity.activity_image.url %><strong><%= rating.activity.name %></strong>:
+	<%= rating.score %>
+	<% if edit %>
+		<%= link_to 'Edit', edit_rating_path(rating) %>
+	<% end %>
+	<br/><br/>
+<% end %>

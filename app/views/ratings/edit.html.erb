@@ -1,0 +1,5 @@
+<h1>Edit Rating</h1>
+
+<%= render partial: 'shared/display_errors', object: @rating %>
+
+<%= render partial: 'rating_form', locals: {rating: @rating, edit_rating_factors: false } %>
