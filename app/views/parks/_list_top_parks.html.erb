@@ -1,0 +1,10 @@
+<% list_top_parks.each do |park, info| %>
+	<h3><%= "#{park.name}" %></h3>
+	<ul>
+		<li><%= "This park is in #{park.state.name}." %></li>
+		<li><%= "You'll like it especially for its #{info[:top_activity].name}." %></li>
+		<%= image_tag info[:top_activity].activity_image.url %>
+		<li>For more info, click <a href="http://www.nps.gov/<%= park.web_extension %>" target=_blank>here</a></li>
+	</ul>
+<br/><br/><br/>
+<% end %>

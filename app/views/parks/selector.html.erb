@@ -1,8 +1,8 @@
 <br/>
 <%= link_to 'Plan another park', planner_path %>
 
-<h3>Your top parks:</h3>
-<%= render partial: 'list_park_scores', object: @sorted_parks %>
+<h2>Your top parks:</h2>
+<%= render partial: 'list_top_parks', object: @sorted_parks %>
 
 <br/>
 <h3>Selected region: <%= @input_region.name %></h3>
@@ -11,10 +11,3 @@
 <br/>
 <h3>Selected activities:</h3>
 <%= render partial: 'list_activities', object: @input_activities %>
-
-
-<%# sorted_parks = [] -%>
-<%# park_scores.each do |park, info| -%>
-	<%# sorted_parks.push([park, info[:score]]) %>
-<%#- end -%>
-<%#- sorted_parks.sort! { |a,b| a[1] <=> b[1] } -%>

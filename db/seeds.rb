@@ -137,16 +137,16 @@ zion = utah.parks.create(name: 'Zion', web_extension: 'zion')
 
 # Create activities
 
-hiking = Activity.create(name: 'Hiking')
-biking = Activity.create(name: 'Biking')
-camping = Activity.create(name: 'Camping')
-wildlife_viewing = Activity.create(name: 'Wildlife Viewing')
-boating = Activity.create(name: 'Boating')
-campfires = Activity.create(name: 'Campfires')
-skiing = Activity.create(name: 'Skiing')
-local_dining = Activity.create(name: 'Local Dining')
-guided_tours = Activity.create(name: 'Guided Tours')
-historic_sites = Activity.create(name: 'Historic Sites')
+hiking = Activity.create(name: 'Hiking', activity_image: File.new("#{Rails.root}/app/assets/images/activities/hiking.png"))
+biking = Activity.create(name: 'Biking', activity_image: File.new("#{Rails.root}/app/assets/images/activities/biking.png"))
+camping = Activity.create(name: 'Camping', activity_image: File.new("#{Rails.root}/app/assets/images/activities/camping.png"))
+wildlife_viewing = Activity.create(name: 'Wildlife Viewing', activity_image: File.new("#{Rails.root}/app/assets/images/activities/wildlife_viewing.png"))
+boating = Activity.create(name: 'Boating', activity_image: File.new("#{Rails.root}/app/assets/images/activities/boating.png"))
+campfires = Activity.create(name: 'Campfires', activity_image: File.new("#{Rails.root}/app/assets/images/activities/campfires.png"))
+skiing = Activity.create(name: 'Skiing', activity_image: File.new("#{Rails.root}/app/assets/images/activities/skiing.png"))
+local_dining = Activity.create(name: 'Local Dining', activity_image: File.new("#{Rails.root}/app/assets/images/activities/local_dining.png"))
+guided_tours = Activity.create(name: 'Guided Tours', activity_image: File.new("#{Rails.root}/app/assets/images/activities/guided_tours.png"))
+historic_sites = Activity.create(name: 'Historic Sites', activity_image: File.new("#{Rails.root}/app/assets/images/activities/historic_sites.png"))
 
 # Create ratings
 
