@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+a:hover { text-decoration: none; font-size: 2em; }

@@ -1,6 +1,6 @@
 <%= form_tag(output_path, method: "get") do %>
 
-<h3>Select your region:</h3>
+<h3>Select your region (leave blank for all):</h3>
 	<%= render partial: 'regions_dropdown_input', object: @regions_list %>
 <br/><br/>
 <h3>Select your activities (leave blank for all):</h3>
