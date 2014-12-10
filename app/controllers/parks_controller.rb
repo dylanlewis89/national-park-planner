@@ -36,10 +36,11 @@ class ParksController < ApplicationController
 	# PUT /parks/:id
 	def update
 		@park = Park.find(params[:id])
+		@park_ratings_sorted = @park.ratings.sort {|a,b| a.score <=> b.score}.reverse
 		if @park.update(park_params())
 			render "show"
 		else
-			render "new"
+			render "edit"
 		end
 	end
 
