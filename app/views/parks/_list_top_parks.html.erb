@@ -1,5 +1,5 @@
 <% list_top_parks.each do |park, info| %>
-	<h3><%= link_to "#{park.name}", park %></h3>
+	<h3><%= link_to "#{park.name}", park, target: '_blank' %></h3>
 	<ul>
 		<li><%= "This park is in #{park.state.name}." %></li>
 		<li><%= "You'll like it especially for its #{info[:top_activity].name}." %></li>
