@@ -1,0 +1,4 @@
+<td><%= user_row.username %></td>
+<td><%= link_to 'Show', user_row %></td>
+<td><%= link_to 'Edit', edit_user_path(user_row) %></td>
+<td><%= link_to 'Destroy', user_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>

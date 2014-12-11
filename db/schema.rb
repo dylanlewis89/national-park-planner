@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206184618) do
+ActiveRecord::Schema.define(version: 20141211040320) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 20141206184618) do
     t.string  "name"
     t.string  "web_extension"
     t.integer "state_id"
+  end
+
+  create_table "parks_users", force: true do |t|
+    t.integer "park_id"
+    t.integer "user_id"
   end
 
   create_table "ratings", force: true do |t|
@@ -41,6 +46,11 @@ ActiveRecord::Schema.define(version: 20141206184618) do
     t.string  "name"
     t.string  "abbreviation"
     t.integer "region_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string "username"
+    t.string "password_digest"
   end
 
 end

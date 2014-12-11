@@ -1,0 +1,7 @@
+<h1>Edit User</h1>
+
+<%= render partial: 'shared/display_errors', object: @user %>
+
+<%= render partial: 'user_edit_form', object: @user %>
+<br/>
+<%= link_to 'Back', user_path(@user) %>

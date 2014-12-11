@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% users_table.each do |user| %>
+      <tr>
+        <%= render partial: 'user_row', object: user %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -7,6 +7,8 @@ class Park < ActiveRecord::Base
 		through: :ratings,
 		source: :activity
 
+	has_and_belongs_to_many :users
+
 	validates :name, :web_extension, :state, presence: true
 	# def info
 	# end
