@@ -1,7 +1,9 @@
 <h1><%= @park.name %></h1>
+<% if current_user() %>
+	<%= link_to 'Edit', edit_park_path(@park) %> |
+	<%= link_to 'All Parks', parks_path %>
+<% end %>
 
-<%= link_to 'Edit', edit_park_path(@park) %> |
-<%= link_to 'All Parks', parks_path %>
 <br/><br/>
 <strong>State</strong>: <%= @park.state.name %>
 <br/>
