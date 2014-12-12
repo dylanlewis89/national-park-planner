@@ -5,6 +5,7 @@
 		<li><%= "You'll like it especially for its #{info[:top_activity].name}." %></li>
 		<%= image_tag info[:top_activity].activity_image.url %>
 		<li>Visit the park's website: <a href="http://www.nps.gov/<%= park.web_extension %>" target=_blank>here</a></li>
+		<li><%= link_to 'Favorite', favorite_park_path(park) %> this park!</li>
 	</ul>
 <br/><br/><br/>
 <% end %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :parks
+  resources :parks do
+    get 'favorite', on: :member
+  end
   resources :regions
   resources :states
   resources :activities

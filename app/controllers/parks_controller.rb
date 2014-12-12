@@ -90,6 +90,18 @@ class ParksController < ApplicationController
 		@sorted_parks = park_scores.sort_by { |a,b| b[:score] }.reverse[0..2]
 	end
 
+	def favorite
+	    park_to_fave = Park.find(params[:id])
+	    if current_user
+	    	if not current_user.parks.include? park_to_fave
+				current_user.parks.push(park_to_fave)
+			end
+			redirect_to current_user
+	    else
+	    	redirect_to planner_path
+	    end
+  	end
+
 	def park_params
 		params.require(:park).permit(:name, :web_extension, :state_id)
 	end

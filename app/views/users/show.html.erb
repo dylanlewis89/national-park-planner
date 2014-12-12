@@ -4,3 +4,17 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'All Users', users_path %>
+
+<br/><br/>
+
+<% if @user.parks.length > 0 %>
+	<h3>Favorite parks:</h3>
+	<ul>
+	<% @user.parks.each do |park| %>
+		<li><%= link_to park.name, park_path(park), target: '_blank' %></li>
+	<% end %>
+	</ul>
+<% else %>
+	<h3>No favorite parks yet...</h3>
+	<%= link_to 'Find some!', planner_path %>
+<% end %>
