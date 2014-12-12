@@ -1,3 +1,6 @@
+# Create master user
+User.create(username: 'admin', password: 1234)
+
 # Create regions
 
 northeast              			= Region.create(name: 'Northeast')
