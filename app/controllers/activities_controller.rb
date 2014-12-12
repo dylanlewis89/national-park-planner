@@ -29,7 +29,6 @@ class ActivitiesController < ApplicationController
 	# GET /activities/:id/edit
 	def edit
 		@activity = Activity.find(params[:id])
-		render "new"
 	end
 
 	# PUT /activities/:id
@@ -38,7 +37,7 @@ class ActivitiesController < ApplicationController
 		if @activity.update(activity_params())
 			render "show"
 		else
-			render "new"
+			render "edit"
 		end
 	end
 

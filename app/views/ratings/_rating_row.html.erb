@@ -1,0 +1,7 @@
+<tr>
+	<td><%= rating_row.park.name %></td>
+	<td><%= rating_row.activity.name %></td>
+	<td><%= rating_row.score %></td>
+	<td><%= link_to 'Edit', edit_rating_path(rating_row) %></td>
+	<td><%= link_to 'Destroy', rating_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

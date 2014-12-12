@@ -1,0 +1,7 @@
+<tr>
+    <td><%= image_tag activity_row.activity_image.url %></td>
+    <td><%= activity_row.name %></td>
+    <td><%= link_to 'Show', activity_path(activity_row) %></td>
+    <td><%= link_to 'Edit', edit_activity_path(activity_row) %></td>
+    <td><%= link_to 'Destroy', activity_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

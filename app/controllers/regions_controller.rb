@@ -29,7 +29,6 @@ class RegionsController < ApplicationController
 	# GET /regions/:id/edit
 	def edit
 		@region = Region.find(params[:id])
-		render "new"
 	end
 
 	# PUT /regions/:id
@@ -38,7 +37,7 @@ class RegionsController < ApplicationController
 		if @region.update(region_params())
 			render "show"
 		else
-			render "new"
+			render "edit"
 		end
 	end
 

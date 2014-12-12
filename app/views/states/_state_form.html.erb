@@ -1,0 +1,14 @@
+<%= form_for(state_form) do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :abbreviation %>
+	<%= f.text_field :abbreviation %>
+
+	<%= f.label :region_id %>
+	<%= f.collection_select :region_id, Region.all, :id, :name, include_blank: true %>
+
+	<%= f.submit :submit %>
+
+<% end %>

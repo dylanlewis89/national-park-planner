@@ -1,0 +1,11 @@
+<%= form_for(activity_form) do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label	:activity_image %>
+	<%= f.file_field :activity_image %>
+
+	<%= f.submit :submit %>
+
+<% end %>

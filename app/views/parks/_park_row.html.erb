@@ -1,0 +1,10 @@
+<tr>
+    <td><%= park_row.name %></td>
+    <td><%= park_row.state.name %></td>
+    <td><%= park_row.state.region.name %></td>
+    <td><a href="http://www.nps.gov/<%= park_row.web_extension %>" target=_blank>Here</a></td>
+    <td><%= link_to 'Show', park_path(park_row) %></td>
+    <td><%= link_to 'Edit', edit_park_path(park_row) %></td>
+    <td><%= link_to 'Favorite', favorite_park_path(park_row) %></td>
+    <td><%= link_to 'Destroy', park_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

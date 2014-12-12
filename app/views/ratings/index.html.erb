@@ -1,28 +1,7 @@
 <h1>Ratings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Park</th>
-      <th>Activity</th>
-      <th>Score</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<%= render partial: 'rating_table', object: @ratings %>
 
-  <tbody>
-    <% @ratings.each do |rating| %>
-      <tr>
-        <td><%= rating.park.name %></td>
-        <td><%= rating.activity.name %></td>
-        <td><%= rating.score %></td>
-        <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
-        <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<br/>
 
 <%= link_to 'New Rating', new_rating_path %>

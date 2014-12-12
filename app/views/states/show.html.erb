@@ -8,9 +8,11 @@
 <%= link_to 'All States', states_path %>
 
 <br/><br/><br/><br/>
-<strong>National parks</strong>:
-<ul>
-<% @state.parks.each do |park| %>
-<li><%= park.name %></li>
+<% if @state.parks.length > 0 %>
+	<strong>National parks</strong>:
+	<ul>
+		<%= render partial: 'list_parks', collection: @state.parks %>
+	</ul>
+<% else %>
+	<strong>This state doesn't have any national parks</strong>
 <% end %>
-</ul>

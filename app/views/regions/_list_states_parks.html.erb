@@ -1,0 +1,7 @@
+<li><%= list_states_parks.name %></li>
+<ul>
+	<% list_states_parks.parks.each do |park| %>
+		<li><%= park.name %></li>
+	<% end %>
+</ul>
+<br/>

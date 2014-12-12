@@ -7,12 +7,5 @@
 
 <br/><br/><br/><br/>
 <ol>
-<% @region.states.each do |state| %>
-<li><%= state.name %></li>
-<ul>
-<% state.parks.each do |park| %>
-<li><%= park.name %></li>
-<% end %>
-</ul><br/>
-<% end %>
+	<%= render partial: 'list_states_parks', collection: @region.states %>
 </ol>

@@ -1,0 +1,7 @@
+<tr>
+	<td><%= state_row.name %></td>
+	<td><%= state_row.region.name %></td>
+	<td><%= link_to 'Show', state_path(state_row) %></td>
+	<td><%= link_to 'Edit', edit_state_path(state_row) %></td>
+	<td><%= link_to 'Destroy', state_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

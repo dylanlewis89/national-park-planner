@@ -8,10 +8,8 @@
 <%= link_to 'All Activities', activities_path %>
 
 <br/><br/><br/><br/>
+
 <strong>Ratings</strong>:
 <ul>
-	<% @activity.ratings.each do |rating| %>
-	<li><strong><%= rating.park.name %></strong>:
-		<%= rating.score %></li>
-	<% end %>
+<%= render partial: 'list_activity_ratings', collection: @activity.ratings %>
 </ul>

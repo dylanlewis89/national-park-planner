@@ -1,31 +1,6 @@
 <h1>National parks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>State</th>
-      <th>Region</th>
-      <th>Website</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @parks.each do |park| %>
-      <tr>
-        <td><%= park.name %></td>
-        <td><%= park.state.name %></td>
-        <td><%= park.state.region.name %></td>
-        <td><a href="http://www.nps.gov/<%= park.web_extension %>" target=_blank>Here</a></td>
-        <td><%= link_to 'Show', park %></td>
-        <td><%= link_to 'Edit', edit_park_path(park) %></td>
-        <td><%= link_to 'Favorite', favorite_park_path(park) %></td>
-        <td><%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: 'parks_table', object: @parks %>
 
 <br>
 

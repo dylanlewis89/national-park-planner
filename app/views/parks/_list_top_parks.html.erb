@@ -7,7 +7,7 @@
 		<li>Visit the park's website <a href="http://www.nps.gov/<%= park.web_extension %>" target=_blank>here</a></li>
 		<li>
 			<% if current_user() %>
-				<%= link_to 'Favorite', favorite_park_path(park) %> this park!
+				<%= link_to 'Favorite', favorite_park_path(park), target: '_blank' %> this park!
 			<% else %>
 				<%= link_to "Login", login_path %> to Favorite this park
 			<% end %>

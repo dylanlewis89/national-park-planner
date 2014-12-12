@@ -32,7 +32,7 @@ class RatingsController < ApplicationController
 		if @rating.update(rating_params())
 			redirect_to ratings_path
 		else
-			render "new"
+			render "edit"
 		end
 	end
 

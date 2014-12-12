@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th>Park</th>
+      <th>Activity</th>
+      <th>Score</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'rating_row', collection: @ratings %>
+  </tbody>
+</table>

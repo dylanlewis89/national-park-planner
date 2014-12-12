@@ -29,7 +29,6 @@ class StatesController < ApplicationController
 	# GET /states/:id/edit
 	def edit
 		@state = State.find(params[:id])
-		render "new"
 	end
 
 	# PUT /states/:id
@@ -38,7 +37,7 @@ class StatesController < ApplicationController
 		if @state.update(state_params())
 			render "show"
 		else
-			render "new"
+			render "edit"
 		end
 	end
 
