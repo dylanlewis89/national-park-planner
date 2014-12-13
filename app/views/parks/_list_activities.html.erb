@@ -1,9 +1,0 @@
-<ul>
-	<% if list_activities %>
-		<% list_activities.each do |activity| %>
-		<li><%= activity.name %><%= image_tag activity.activity_image.url %></li>
-		<% end %>
-	<% else %>
-		None
-	<% end %>
-</ul>
