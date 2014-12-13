@@ -1,5 +1,6 @@
 # Create master user
-User.create(username: 'admin', password: 1234)
+admin = User.create(username: 'admin', password: 1234)
+test = User.create(username: 'test', password: 1234)
 
 # Create regions
 
@@ -150,6 +151,12 @@ skiing = Activity.create(name: 'Skiing', activity_image: File.new("#{Rails.root}
 local_dining = Activity.create(name: 'Local Dining', activity_image: File.new("#{Rails.root}/app/assets/images/activities/local_dining.png"))
 guided_tours = Activity.create(name: 'Guided Tours', activity_image: File.new("#{Rails.root}/app/assets/images/activities/guided_tours.png"))
 historic_sites = Activity.create(name: 'Historic Sites', activity_image: File.new("#{Rails.root}/app/assets/images/activities/historic_sites.png"))
+
+# Create sample trip
+Trip.create(name: 'Geyser Gazing', park: yellowstone, users: [admin], activities: [hiking, biking, campfires])
+Trip.create(name: 'The Maze', park: canyonlands, users: [admin, test], activities: [camping, skiing, local_dining])
+Trip.create(name: 'Peak Bagger', park: rocky_mountain, users: [admin, test], activities: [hiking])
+Trip.create(name: 'Scenic River Float', park: kobuk_valley, users: [test], activities: [boating, wildlife_viewing])
 
 # Create ratings
 

@@ -1,7 +1,7 @@
 <br/>
 
 <h2>Your top parks:</h2>
-<%= render partial: 'list_top_parks', object: @sorted_parks %>
+<%= render partial: 'list_top_parks', locals: {sorted_parks: @sorted_parks, activities: @input_activities} %>
 
 <br/>
 <h3>Selected region: <%= @input_region.name %></h3>
@@ -9,4 +9,4 @@
 <%= render partial: 'list_region_states', object: @input_region %>
 <br/>
 <h3>Selected activities:</h3>
-<%= render partial: 'list_activities', object: @input_activities %>
+<%= render partial: 'shared/list_activities', object: @input_activities %>

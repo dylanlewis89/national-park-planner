@@ -1,0 +1,13 @@
+<% if list_user_trips.trips.length > 0 %>
+	<h3>Saved trips:</h3>
+	<ul>
+	<% list_user_trips.trips.each do |trip| %>
+		<li><%= link_to trip.name, trip_path(trip) %></li>
+	<% end %>
+	</ul>
+<% else %>
+	<h3>No trips yet...</h3>
+	<% if list_user_trips == current_user() %>
+		<%= link_to 'Plan one!', planner_path %>
+	<% end %>
+<% end %>

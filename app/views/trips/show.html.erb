@@ -1,0 +1,21 @@
+<h1><%= @trip.name %></h1>
+
+<br/>
+
+<% if @trip.users.include? current_user() %>
+	<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<% end %>
+<%= link_to 'All Trips', trips_path %>
+
+
+<br/><br/>
+
+<h3>Park: <%= link_to @trip.park.name, park_path(@trip.park), target: '_blank' %></h3>
+<br/>
+<h3>Users taking this trip:</h3>
+<% @trip.users.each do |user| %>
+	<%= link_to user.username, user_path(user), target: '_blank' %><br/>
+<% end %>
+<br/>
+<h3>Trip activities:</h3>
+<%= render partial: 'shared/list_activities', object: @trip.activities %>

@@ -7,10 +7,6 @@
   </thead>
 
   <tbody>
-    <% users_table.each do |user| %>
-      <tr>
-        <%= render partial: 'user_row', object: user %>
-      </tr>
-    <% end %>
+    <%= render partial: 'user_row', collection: users_table %>
   </tbody>
 </table>

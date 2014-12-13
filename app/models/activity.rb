@@ -6,6 +6,8 @@ class Activity < ActiveRecord::Base
 		through: :ratings,
 		source: :park
 
+	has_and_belongs_to_many :trips
+
 	validates :name, presence: true
 
 	has_attached_file(
