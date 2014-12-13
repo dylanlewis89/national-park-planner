@@ -1,0 +1,18 @@
+<h1>Update Trip</h1>
+
+<%= render partial: 'shared/display_errors', object: @trip %>
+
+<%= form_for(@trip) do |f| %>
+	<div>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	</div>
+	<br/>
+	<div>
+	<%= f.label :users, "Manage travelers" %><br/>
+	<%= f.collection_check_boxes(:users, User.all, :id, :username, checked: @user_ids ) %>
+	</div>
+	<br/>
+	<%= f.submit :submit %>
+
+<% end %>

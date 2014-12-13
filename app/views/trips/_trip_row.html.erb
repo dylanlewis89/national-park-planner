@@ -3,7 +3,7 @@
 	<td>| <%= trip_row.users[0].username %></td>
 	<td>| <%= trip_row.park.name %></td>
 	<td>| <%= render partial: 'show_two_activities', object: trip_row.activities %></td>
-	<td><%= link_to 'Show', trip_row %></td>
-	<td><%= link_to 'Edit', edit_trip_path(trip_row) %></td>
-	<td><%= link_to 'Destroy', trip_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td>| <%= link_to 'Show', trip_row %></td>
+	<td><% if trip_row.users.include? current_user() %><%= link_to 'Edit', edit_trip_path(trip_row) %><% end %></td>
+	<td><% if trip_row.users.include? current_user() %><%= link_to 'Destroy', trip_row, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
 </tr>

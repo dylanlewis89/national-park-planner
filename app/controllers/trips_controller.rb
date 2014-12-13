@@ -34,12 +34,16 @@ class TripsController < ApplicationController
 	# GET /trips/:id/edit
 	def edit
 		@trip = Trip.find(params[:id])
+		@user_ids = @trip.users.map { |u| u.id }
 	end
 
 	# PUT /trips/:id
 	def update
 		@trip = Trip.find(params[:id])
-		if @trip.update(trip_params())
+		trip_data = {}
+		trip_data[:name] = params[:trip][:name]
+		trip_data[:users] = User.find(params[:trip][:users][0...-1])
+		if @trip.update(trip_data)
 			render "show"
 		else
 			render "edit"

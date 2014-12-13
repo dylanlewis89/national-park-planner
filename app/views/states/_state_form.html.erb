@@ -7,7 +7,7 @@
 	<%= f.text_field :abbreviation %>
 
 	<%= f.label :region_id %>
-	<%= f.collection_select :region_id, Region.all, :id, :name, include_blank: true %>
+	<%= f.collection_select :region_id, Region.all, :id, :name %>
 
 	<%= f.submit :submit %>
 
