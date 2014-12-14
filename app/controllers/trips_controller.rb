@@ -2,7 +2,9 @@ class TripsController < ApplicationController
 	
 	# GET /trips
 	def index
-		@trips = Trip.all
+		@all_trips = Trip.all
+		@user_trips = Trip.joins(:users).where('users.id = ?', current_user().id)
+		@other_trips = Trip.joins(:users).where('users.id != ?', current_user().id)
 	end
 
 	# GET /trips/:id

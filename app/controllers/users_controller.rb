@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	# GET /users
 	def index
 		@users = User.all
+		authorize! :assign_roles, current_user()
 	end
 
 	# GET /users/:id
@@ -34,7 +35,10 @@ class UsersController < ApplicationController
 	# PUT /users/:id
 	def update
 		@user = User.find(params[:id])
-		if @user.update(user_params())
+		if params[:user][:role]
+			authorize! :assign_roles, current_user()
+		end
+		if (@user == current_user() or current_user().role == 'admin') and @user.update(user_params())
 			render "show"
 		else
 			render "edit"
@@ -50,6 +54,6 @@ class UsersController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:username, :password, :password_confirmation)
+		params.require(:user).permit(:username, :password, :password_confirmation, :role)
 	end
 end

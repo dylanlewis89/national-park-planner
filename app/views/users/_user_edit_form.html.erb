@@ -9,6 +9,10 @@
 	<%= f.label :password_confirmation %>
 	<%= f.text_field :password_confirmation %>
 
+	<% if can? :assign_roles, current_user() %>
+		<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+	<% end %>
+	
 	<%= f.submit :submit %>
 
 <% end %>

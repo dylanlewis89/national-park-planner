@@ -1,15 +1,19 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Created by</th>
-      <th>Park</th>
-      <th>Activities</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if trips_table.length > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Planned by</th>
+        <th>Park</th>
+        <th>Activities</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%= render partial: 'trip_row', collection: trips_table %>
-  </tbody>
-</table>
+    <tbody>
+      <%= render partial: 'trip_row', collection: trips_table %>
+    </tbody>
+  </table>
+<% else %>
+  No trips yet. <%= link_to "Plan one!", planner_path %>
+<% end %>
