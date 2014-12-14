@@ -9,6 +9,11 @@
 
 <br/><br/><br/><br/>
 
+<strong>Gear</strong>:
+<ul>
+<%= render partial: 'list_gear', collection: @activity.gears %>
+</ul>
+
 <strong>Ratings</strong>:
 <ul>
 <%= render partial: 'list_activity_ratings', collection: @activity.ratings %>

@@ -20,7 +20,7 @@ class RegionsController < ApplicationController
 		@region = Region.new(region_params())
 		if @region.save
 		  #success case
-			redirect_to region_path(@region)
+			render "show"
 		else
 			render "new"
 		end

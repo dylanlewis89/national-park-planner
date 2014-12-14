@@ -20,7 +20,7 @@ class StatesController < ApplicationController
 		@state = State.new(state_params())
 		if @state.save
 		  #success case
-			redirect_to state_path(@state)
+			render "state"
 		else
 			render "new"
 		end

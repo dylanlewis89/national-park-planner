@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params())
 		if @user.save
 		  #success case
-			redirect_to user_path(@user)
+			render "show"
 		else
 			render "new"
 		end

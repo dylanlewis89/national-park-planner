@@ -152,6 +152,12 @@ local_dining = Activity.create(name: 'Local Dining', activity_image: File.new("#
 guided_tours = Activity.create(name: 'Guided Tours', activity_image: File.new("#{Rails.root}/app/assets/images/activities/guided_tours.png"))
 historic_sites = Activity.create(name: 'Historic Sites', activity_image: File.new("#{Rails.root}/app/assets/images/activities/historic_sites.png"))
 
+# Create gear items for packing lists
+tent = camping.gears.create(name: 'Tent', description: "Always pick a tent that's one size larger than the people traveling")
+binoculars = wildlife_viewing.gears.create(name: 'Binoculars', description: "Pick a light pair with 3-5 zoom capability")
+sleeping_pad = camping.gears.create(name: 'Sleeping pad', description: "A three-quarter length, inflatable pad")
+sleeping_bag = camping.gears.create(name: 'Sleeping bag', description: "A synthetic bag rated to 32°F")
+
 # Create sample trip
 Trip.create(name: 'Geyser Gazing', park: yellowstone, users: [admin], activities: [hiking, biking, campfires])
 Trip.create(name: 'The Maze', park: canyonlands, users: [admin, test], activities: [camping, skiing, local_dining])

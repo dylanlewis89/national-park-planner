@@ -1,0 +1,13 @@
+<h1><%= @gear.name %></h1>
+<strong>Description: </strong><%= @gear.description %>
+<br/><br/>
+<% if current_user() %>
+	<%= link_to 'Edit', edit_gear_path(@gear) %> |
+<% end %>
+<%= link_to 'All Gear', gears_path %>
+
+<br/><br/>
+
+<h3>Activities</h3>
+
+<%= render partial: 'shared/list_activities', object: @gear.activities %>

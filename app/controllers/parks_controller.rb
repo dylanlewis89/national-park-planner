@@ -21,7 +21,7 @@ class ParksController < ApplicationController
 		@park = Park.new(park_params())
 		if @park.save
 		  #success case
-			redirect_to park_path(@park)
+			render "show"
 		else
 			render "new"
 		end

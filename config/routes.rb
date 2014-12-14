@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :ratings
   resources :users
-  # resources :trips
+  resources :gears
 
   get '/trips', to: 'trips#index', as: 'trips'
   post '/trips', to: 'trips#create', as: 'save_trip'

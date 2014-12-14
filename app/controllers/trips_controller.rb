@@ -25,7 +25,7 @@ class TripsController < ApplicationController
 		@trip = Trip.new(trip_data)
 		if @trip.save
 		  #success case
-			redirect_to trip_path(@trip)
+			render "show"
 		else
 			render "new"
 		end

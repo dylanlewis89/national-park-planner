@@ -1,0 +1,19 @@
+<%= form_for(gear_form) do |f| %>
+	<div>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	</div>
+	<br/>
+	<div>
+	<%= f.label :description %>
+	<%= f.text_area :description, size: "30x5" %>
+	</div>
+	<br/>
+	<div>
+	<%= f.label :activities, "Activities:" %><br/>
+	<%= f.collection_check_boxes(:activities, Activity.all, :id, :name, checked: @activity_ids ) %>
+	</div>
+	<br/>
+	<%= f.submit :submit %>
+
+<% end %>

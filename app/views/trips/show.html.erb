@@ -19,3 +19,10 @@
 <br/>
 <h3>Trip activities:</h3>
 <%= render partial: 'shared/list_activities', object: @trip.activities %>
+<br/>
+<h3>Packing list:</h3>
+<ol>
+<% @trip.activities.each do |activity| %>
+	<%= render partial: 'packing_list', collection: activity.gears %>
+<% end %>
+</ol>

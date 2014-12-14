@@ -20,7 +20,7 @@ class ActivitiesController < ApplicationController
 		@activity = Activity.new(activity_params())
 		if @activity.save
 		  #success case
-			redirect_to activity_path(@activity)
+			render "show"
 		else
 			render "new"
 		end
