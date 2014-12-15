@@ -4,7 +4,7 @@ class TripsController < ApplicationController
 	def index
 		@all_trips = Trip.all
 		@user_trips = Trip.joins(:users).where('users.id = ?', current_user().id)
-		@other_trips = Trip.joins(:users).where('users.id != ?', current_user().id)
+		@other_trips = @all_trips - @user_trips
 	end
 
 	# GET /trips/:id
