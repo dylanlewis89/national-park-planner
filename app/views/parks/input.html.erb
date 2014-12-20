@@ -1,13 +1,21 @@
-<%= form_tag(output_path, method: "get") do %>
-
-<h3>Select your region:</h3>
-	<%= render partial: 'regions_dropdown_input', object: @regions_list %>
-<br/><br/>
-<h3>Select your activities (leave blank for all):</h3>
-	<%= render partial: 'activities_checkbox_input', object: @activities_list %>
-<br/><br/>
-<%= submit_tag("Choose my park!") %>
-
-<% end %>
-
+<div class="row">
+	<%= form_tag(output_path, method: "get") do %>
+	<div class="col-md-3">
+		<h2>Step 1:</h2>
+		<h4>Select your region</h4>
+			<%= render partial: 'regions_dropdown_input', object: @regions_list %>
+	</div>
+	<div class="col-md-6">
+		<h2>Step 2:</h2>
+		<h4>Select your activities <br/><small>...or leave blank for all</small></h4>
+			<%= render partial: 'activities_checkbox_input', object: @activities_list %>
+	</div>
+	<div class="col-md-3">
+		<h2>Step 3:</h3>
+		<button type="button" class="btn btn-link">
+		<%= submit_tag("Choose your park!") %>
+		</button>
+	</div>
+	<% end %>
+</div>
 <!-- This could eventually be a priority scale for the activities chosen <%#= f.range_field :score, :min=>0, :max=>10, :class=>"slide", :id=>"slider1"%> -->

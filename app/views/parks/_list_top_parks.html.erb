@@ -1,16 +1,20 @@
+<div class="row">
 <% sorted_parks.each do |park, info| %>
-	<h3><%= link_to "#{park.name}", park, target: '_blank' %></h3>
-	<ul>
-		<li><%= "This park is in #{park.state.name}." %></li>
-		<li><%= "You'll like it especially for its #{info[:top_activity].name}." %></li>
-		<%= image_tag info[:top_activity].activity_image.url %>
-		<li>Visit the park's website <a href="http://www.nps.gov/<%= park.web_extension %>" target=_blank>here</a></li>
-			<% if current_user() %>
-				<li><%= link_to 'Favorite', favorite_park_path(park), target: '_blank' %> this park!</li>
-				<li><%= link_to 'Save', save_trip_path(name: "#{park.name}_trip", park: park.id, activities: activities.map { |a| a.id }, users: [current_user().id] ), method: :post %> this trip!</li>
-			<% else %>
-				<li><%= link_to "Login", login_path %> to favorite this park or plan a trip</li>
-			<% end %>
-	</ul>
-<br/><br/><br/>
+	<div class="col-md-4">
+		<h3><%= link_to "#{park.name}", park, target: '_blank' %></h3>
+		<ul>
+			<li><%= "This park is in #{park.state.name}." %></li>
+			<li><%= "You'll like it especially for its #{info[:top_activity].name}." %></li>
+			<%= image_tag info[:top_activity].activity_image.url %>
+			<li>Visit the park's website <a href="http://www.nps.gov/<%= park.web_extension %>" target=_blank>here</a></li>
+				<% if current_user() %>
+					<li><%= link_to 'Favorite', favorite_park_path(park), target: '_blank' %> this park!</li>
+					<li><%= link_to 'Save', save_trip_path(name: "#{park.name}_trip", park: park.id, activities: activities.map { |a| a.id }, users: [current_user().id] ), method: :post %> this trip!</li>
+				<% else %>
+					<li><%= link_to "Login", login_path %> to favorite this park or plan a trip</li>
+				<% end %>
+		</ul>
+	</div>
 <% end %>
+</div>
+<br/><br/><br/>
