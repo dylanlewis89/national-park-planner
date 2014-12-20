@@ -2,7 +2,7 @@
 <% activities_checkbox_input.each do |activity| %>
 	<div class="col-md-6">
 		<%= check_box_tag("input_activities[]", activity.id) %>
-		<%= image_tag activity.activity_image.url %>
+		<%= image_tag activity.activity_image.url(:thumb) %>
 		<%= label_tag(activity.id, activity.name) %>
 	</div>
 <% end %>

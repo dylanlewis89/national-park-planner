@@ -1,5 +1,5 @@
 <tr>
-    <td><%= image_tag activity_row.activity_image.url %></td>
+    <td><%= image_tag activity_row.activity_image.url(:thumb) %></td>
     <td><%= activity_row.name %></td>
     <td><%= link_to 'Show', activity_path(activity_row) %></td>
     <td><%= link_to 'Edit', edit_activity_path(activity_row) %></td>

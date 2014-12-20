@@ -1,7 +1,7 @@
 <ul>
 	<% if list_activities %>
 		<% list_activities.each do |activity| %>
-		<li><%= activity.name %><%= image_tag activity.activity_image.url %></li>
+		<li><%= activity.name %><%= image_tag activity.activity_image.url(:thumb) %></li>
 		<% end %>
 	<% else %>
 		None
