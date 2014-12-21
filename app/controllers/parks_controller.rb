@@ -55,7 +55,7 @@ class ParksController < ApplicationController
 	# GET
 	def input
 		@activities_list = Activity.all
-		@regions_list = Region.all.map {|region| [region.name, region.id]}
+		@regions_list = Region.all
 	end
 
 	# GET with query string

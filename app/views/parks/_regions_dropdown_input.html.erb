@@ -1,1 +1,5 @@
-<%= select_tag(:input_region, options_for_select(regions_dropdown_input)) %>
+<% regions_dropdown_input.each do |region| %>
+	<%= radio_button_tag(:input_region, region.id) %>
+	<%= label_tag(:input_region, region.name) %>
+	<br/>
+<% end %>
