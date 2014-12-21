@@ -78,12 +78,15 @@ class ParksController < ApplicationController
 			park_score = 0
 			top_activity = ['',0]
 			@input_activities.each do |activity|
-				activity_score = Rating.find_by(activity: activity, park: park).score.to_i
-				park_score += (activity_score)*2
-				if activity_score > top_activity[1]
-					top_activity[0] = activity
-					top_activity[1] = activity_score
+				if Rating.find_by(activity: activity, park: park)
+					activity_score = Rating.find_by(activity: activity, park: park).score.to_i
+					park_score += (activity_score)*2
+					if activity_score > top_activity[1]
+						top_activity[0] = activity
+						top_activity[1] = activity_score
+					end
 				end
+
 			park_scores[park] = {score: park_score, top_activity: top_activity[0]}
 			end
 		end
