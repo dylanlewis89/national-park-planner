@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214185605) do
+ActiveRecord::Schema.define(version: 20141222022538) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20141214185605) do
     t.string "username"
     t.string "password_digest"
     t.string "role"
+    t.string "email"
   end
 
 end

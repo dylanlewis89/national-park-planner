@@ -38,6 +38,7 @@
 	        <li><a href=<%= user_path(current_user()) %>>My account</a></li>
 	        <li><a href=<%= logout_path %>>Logout</a></li>
 	  	<% else %>
+        <li><a href=<%= new_user_path %>>Create account</a></li>
 	  		<li><a href=<%= login_path %>>Log in</a></li>
 	  	<% end %>
       </ul>

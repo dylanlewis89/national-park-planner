@@ -1,7 +1,7 @@
 # Create master user
-admin = User.create(username: 'Admin', password: 1234, role: 'admin')
-test = User.create(username: 'Test', password: 1234, role: 'customer')
-frank = User.create(username: 'Frank', password: 1234, role: 'customer')
+admin = User.create(username: 'Admin', email: 'dylanlewis89@gmail.com', password: 1234, role: 'admin')
+test = User.create(username: 'Test', email: 'test@gmail.com', password: 1234, role: 'customer')
+frank = User.create(username: 'Frank', email: 'frank@gmail.com', password: 1234, role: 'customer')
 
 # Create regions
 

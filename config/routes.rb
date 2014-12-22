@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users
   resources :gears
 
+  get '/register', to: 'users#register', as: 'register'
+  
+
   get '/trips', to: 'trips#index', as: 'trips'
   post '/trips', to: 'trips#create', as: 'save_trip'
   get '/trips/new', to: 'trips#new', as: 'new_trip'

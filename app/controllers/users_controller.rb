@@ -19,9 +19,11 @@ class UsersController < ApplicationController
 	# POST /users
 	def create
 		@user = User.new(user_params())
-		if @user.save
+		if current_user() and current_user().admin? and @user.save
 		  #success case
-			render "show"
+			redirect_to users_path
+		elsif not current_user() and @user.save
+			redirect_to login_path
 		else
 			render "new"
 		end
@@ -54,6 +56,9 @@ class UsersController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:username, :password, :password_confirmation, :role)
+		if not params[:user][:role]
+			params[:user][:role] = 'customer'
+		end
+		params.require(:user).permit(:username, :email, :password, :password_confirmation, :role)
 	end
 end
