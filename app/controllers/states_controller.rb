@@ -20,7 +20,7 @@ class StatesController < ApplicationController
 		@state = State.new(state_params())
 		if @state.save
 		  #success case
-			render "state"
+			render "show"
 		else
 			render "new"
 		end
