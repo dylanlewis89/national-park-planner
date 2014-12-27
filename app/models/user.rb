@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
 	has_and_belongs_to_many :parks
 
-	validates :username, :password, :role, presence: true
+	validates :username, :password_digest, :role, presence: true
 
 	def admin?
 		self.role == 'admin'
