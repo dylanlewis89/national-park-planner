@@ -2,6 +2,7 @@
 admin = User.create(username: 'Admin', email: 'dylanlewis89@gmail.com', password: 1234, role: 'admin')
 test = User.create(username: 'Test', email: 'test@gmail.com', password: 1234, role: 'customer')
 frank = User.create(username: 'Frank', email: 'frank@gmail.com', password: 1234, role: 'customer')
+wayne = User.create(username: 'Wayne', email: 'wayne@gmail.com', password: 1234, role: 'customer')
 
 # Create regions
 
