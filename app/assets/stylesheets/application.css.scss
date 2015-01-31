@@ -20,6 +20,7 @@
 
 body {
   padding-top: 65px;
+  padding-left: 50px;
   background-image: image-url("logos/background.jpg");
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -47,6 +48,7 @@ a {
   &:hover {
     color: black;
   }
+  font-weight: bold;
 }
 
 div {
