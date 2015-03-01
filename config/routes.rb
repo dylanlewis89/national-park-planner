@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :parks do
     get 'favorite', on: :member
   end
+
+  # seven RESTful routes created with resources
   resources :regions
   resources :states
   resources :activities
