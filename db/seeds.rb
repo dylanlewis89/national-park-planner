@@ -141,6 +141,260 @@ yellowstone = wyoming.parks.create(name: 'Yellowstone', web_extension: 'yell')
 yosemite = california.parks.create(name: 'Yosemite', web_extension: 'yose')
 zion = utah.parks.create(name: 'Zion', web_extension: 'zion')
 
+# Populate park visitation
+# Sourced from: https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Annual%20Park%20Ranking%20Report%20(1979%20-%20Last%20Calendar%20Year)
+
+acadia.annual_visitors = 2563129
+american_samoa_np.annual_visitors = 13953
+arches.annual_visitors = 1284767
+badlands.annual_visitors = 868094
+big_bend.annual_visitors = 314102
+biscayne.annual_visitors = 525745
+black_canyon_of_the_gunnison.annual_visitors = 183045
+bryce_canyon.annual_visitors = 1435741
+canyonlands.annual_visitors = 542431
+capitol_reef.annual_visitors = 786514
+carlsbad_caverns.annual_visitors = 397309
+channel_islands.annual_visitors = 342161
+congaree.annual_visitors = 120122
+crater_lake.annual_visitors = 535508
+cuyahoga_valley.annual_visitors = 2189849
+death_valley.annual_visitors = 1101312
+denali.annual_visitors = 531315
+dry_tortugas.annual_visitors = 64865
+everglades.annual_visitors = 1110901
+gates_of_the_arctic.annual_visitors = 12669
+glacier_bay.annual_visitors = 500727
+glacier.annual_visitors = 2338528
+grand_canyon.annual_visitors = 4756771
+grand_teton.annual_visitors = 2791392
+great_basin.annual_visitors = 107526
+great_sand_dunes.annual_visitors = 271774
+great_smoky_mountains.annual_visitors = 10099276
+guadalupe_mountains.annual_visitors = 166868
+haleakala.annual_visitors = 1142040
+hawaii_volcanoes.annual_visitors = 1693005
+hot_springs.annual_visitors = 1424484
+isle_royale.annual_visitors = 14560
+joshua_tree.annual_visitors = 1589904
+katmai.annual_visitors = 30896
+kenai_fjords.annual_visitors = 270666
+kings_canyon.annual_visitors = 502268
+kobuk_valley.annual_visitors = 16875
+lake_clark.annual_visitors = 16100
+lassen_volcanic.annual_visitors = 432977
+mammoth_cave.annual_visitors = 522628
+mesa_verde.annual_visitors = 501563
+mount_rainier.annual_visitors = 1264259
+north_cascades.annual_visitors = 23865
+olympic.annual_visitors = 3243872
+petrified_forest.annual_visitors = 836799
+pinnacles.annual_visitors = 196635
+redwood.annual_visitors = 429166
+rocky_mountain.annual_visitors = 3434751
+saguaro.annual_visitors = 673572
+sequoia.annual_visitors = 1039137
+shenandoah.annual_visitors = 1255321
+theodore_roosevelt.annual_visitors = 559580
+virgin_islands_np.annual_visitors = 426930
+voyageurs.annual_visitors = 239160
+wind_cave.annual_visitors = 547022
+wrangell_st_elias.annual_visitors = 74722
+yellowstone.annual_visitors = 3513484
+yosemite.annual_visitors = 3882642
+zion.annual_visitors = 3189696
+
+
+# Populate park acreage
+# Sourced from Wikipedia: http://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
+
+acadia.acreage = 47390
+american_samoa_np.acreage = 9000
+arches.acreage = 76519
+badlands.acreage = 242756
+big_bend.acreage = 801163
+biscayne.acreage = 172924
+black_canyon_of_the_gunnison.acreage = 32950
+bryce_canyon.acreage = 35835
+canyonlands.acreage = 337598
+capitol_reef.acreage = 241904
+carlsbad_caverns.acreage = 46766
+channel_islands.acreage = 249561
+congaree.acreage = 26546
+crater_lake.acreage = 183224
+cuyahoga_valley.acreage = 32861
+death_valley.acreage = 3372402
+denali.acreage = 4740912
+dry_tortugas.acreage = 64701
+everglades.acreage = 1508538
+gates_of_the_arctic.acreage = 7523898
+glacier_bay.acreage = 1013572
+glacier.acreage = 3224840
+grand_canyon.acreage = 1217403
+grand_teton.acreage = 309995
+great_basin.acreage = 77180
+great_sand_dunes.acreage = 42984
+great_smoky_mountains.acreage = 521490
+guadalupe_mountains.acreage = 86416
+haleakala.acreage = 29094
+hawaii_volcanoes.acreage = 323431
+hot_springs.acreage = 5550
+isle_royale.acreage = 571790
+joshua_tree.acreage = 789745
+katmai.acreage = 3674530
+kenai_fjords.acreage = 669983
+kings_canyon.acreage = 461901
+kobuk_valley.acreage = 1750717
+lake_clark.acreage = 2619733
+lassen_volcanic.acreage = 106372
+mammoth_cave.acreage = 52830
+mesa_verde.acreage = 52122
+mount_rainier.acreage = 235625
+north_cascades.acreage = 504781
+olympic.acreage = 922651
+petrified_forest.acreage = 93533
+pinnacles.acreage = 26606
+redwood.acreage = 112512
+rocky_mountain.acreage = 265828
+saguaro.acreage = 91440
+sequoia.acreage = 404051
+shenandoah.acreage = 199045
+theodore_roosevelt.acreage = 70447
+virgin_islands_np.acreage = 14689
+voyageurs.acreage = 218200
+wind_cave.acreage = 28295
+wrangell_st_elias.acreage = 8323148
+yellowstone.acreage = 2219791
+yosemite.acreage = 761266
+zion.acreage = 146598
+
+# Populate park creation date
+# Sourced from Wikipedia: http://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
+
+acadia.creation_date = "1919-02-26"
+american_samoa_np .creation_date = "1988-10-31"
+arches.creation_date = "1929-04-12"
+badlands.creation_date = "1978-11-10"
+big_bend.creation_date = "1944-06-12"
+biscayne.creation_date = "1980-06-28"
+black_canyon_of_the_gunnison.creation_date = "1999-10-21"
+bryce_canyon.creation_date = "1928-02-25"
+canyonlands.creation_date = "1964-09-12"
+capitol_reef.creation_date = "1971-12-18"
+carlsbad_caverns.creation_date = "1930-05-14"
+channel_islands.creation_date = "1980-03-05"
+congaree.creation_date = "2003-11-10"
+crater_lake.creation_date = "1902-05-22"
+cuyahoga_valley.creation_date = "2000-10-11"
+death_valley.creation_date = "1994-10-31"
+denali.creation_date = "1917-02-26"
+dry_tortugas.creation_date = "1992-10-26"
+everglades.creation_date = "1934-05-30"
+gates_of_the_arctic.creation_date = "1980-12-02"
+glacier_bay.creation_date = "1910-05-11"
+glacier.creation_date = "1980-12-02"
+grand_canyon.creation_date = "1919-02-26"
+grand_teton.creation_date = "1929-02-26"
+great_basin.creation_date = "1986-10-27"
+great_sand_dunes.creation_date = "2004-09-13"
+great_smoky_mountains.creation_date = "1934-06-15"
+guadalupe_mountains.creation_date = "1966-10-15"
+haleakala.creation_date = "1916-08-01"
+hawaii_volcanoes.creation_date = "1916-08-01"
+hot_springs.creation_date = "1921-03-04"
+isle_royale.creation_date = "1940-04-03"
+joshua_tree.creation_date = "1994-10-31"
+katmai.creation_date = "1980-12-02"
+kenai_fjords.creation_date = "1980-12-02"
+kings_canyon.creation_date = "1940-03-04"
+kobuk_valley.creation_date = "1980-12-02"
+lake_clark.creation_date = "1980-12-02"
+lassen_volcanic.creation_date = "1916-08-09"
+mammoth_cave.creation_date = "1941-07-01"
+mesa_verde.creation_date = "1906-06-29"
+mount_rainier.creation_date = "1899-03-02"
+north_cascades.creation_date = "1968-10-02"
+olympic.creation_date = "1938-06-29"
+petrified_forest.creation_date = "1962-12-09"
+pinnacles.creation_date = "2013-01-10"
+redwood.creation_date = "1968-10-02"
+rocky_mountain.creation_date = "1915-01-26"
+saguaro.creation_date = "1994-10-14"
+sequoia.creation_date = "1890-09-25"
+shenandoah.creation_date = "1926-05-22"
+theodore_roosevelt.creation_date = "1978-11-10"
+virgin_islands_np.creation_date = "1956-08-02"
+voyageurs.creation_date = "1971-01-08"
+wind_cave.creation_date = "1903-01-09"
+wrangell_st_elias.creation_date = "1980-12-02"
+yellowstone.creation_date = "1872-03-01"
+yosemite.creation_date = "1890-10-01"
+zion.creation_date = "1919-11-19"
+
+
+# Save all parks
+
+acadia.save!
+american_samoa_np .save!
+arches.save!
+badlands.save!
+big_bend.save!
+biscayne.save!
+black_canyon_of_the_gunnison.save!
+bryce_canyon.save!
+canyonlands.save!
+capitol_reef.save!
+carlsbad_caverns.save!
+channel_islands.save!
+congaree.save!
+crater_lake.save!
+cuyahoga_valley.save!
+death_valley.save!
+denali.save!
+dry_tortugas.save!
+everglades.save!
+gates_of_the_arctic.save!
+glacier_bay.save!
+glacier.save!
+grand_canyon.save!
+grand_teton.save!
+great_basin.save!
+great_sand_dunes.save!
+great_smoky_mountains.save!
+guadalupe_mountains.save!
+haleakala.save!
+hawaii_volcanoes.save!
+hot_springs.save!
+isle_royale.save!
+joshua_tree.save!
+katmai.save!
+kenai_fjords.save!
+kings_canyon.save!
+kobuk_valley.save!
+lake_clark.save!
+lassen_volcanic.save!
+mammoth_cave.save!
+mesa_verde.save!
+mount_rainier.save!
+north_cascades.save!
+olympic.save!
+petrified_forest.save!
+pinnacles.save!
+redwood.save!
+rocky_mountain.save!
+saguaro.save!
+sequoia.save!
+shenandoah.save!
+theodore_roosevelt.save!
+virgin_islands_np.save!
+voyageurs.save!
+wind_cave.save!
+wrangell_st_elias.save!
+yellowstone.save!
+yosemite.save!
+zion.save!
+
+
 # Create activities
 
 hiking = Activity.create(name: 'Hiking', activity_image: File.new("#{Rails.root}/app/assets/images/activities/hiking.png"))
