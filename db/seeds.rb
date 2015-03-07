@@ -335,7 +335,7 @@ zion.creation_date = "1919-11-19"
 # Save all parks
 
 acadia.save!
-american_samoa_np .save!
+american_samoa_np.save!
 arches.save!
 badlands.save!
 big_bend.save!
@@ -393,6 +393,15 @@ wrangell_st_elias.save!
 yellowstone.save!
 yosemite.save!
 zion.save!
+
+
+# Add full_name for each park for lat/long search and save
+
+Park.all.each do |park|
+	park.full_name = park.name + " national park"
+	park.save!
+	sleep(0.2)
+end
 
 
 # Create activities

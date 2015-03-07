@@ -38,6 +38,8 @@ gem 'bootstrap-sass', '~> 3.3.1'
 # Recommended to be added with bootstrap from https://github.com/twbs/bootstrap-sass#a-ruby-on-rails
 gem 'autoprefixer-rails'
 
+gem 'geocoder'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

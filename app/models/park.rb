@@ -11,6 +11,9 @@ class Park < ActiveRecord::Base
 
 	has_and_belongs_to_many :users
 
+	geocoded_by :full_name
+	after_validation :geocode, :if => :full_name_changed?
+
 	validates :name, :web_extension, :state, presence: true
 	# def info
 	# end
