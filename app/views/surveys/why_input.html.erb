@@ -1,0 +1,9 @@
+<h4>Tell us why you're going</h4>
+<%= form_tag(survey_why_output_path) do %>
+<h6>How much adventure are you looking for?</h6>
+<%= select(:survey, :adventure_score, Array(1..10), selected: @adventure_score) %>
+<h6>How much solitude are you looking for?</h6>
+<%= select(:survey, :solitude_score, Array(1..10), selected: @solitude_score) %>
+<br/><br/>
+<%= submit_tag("Next") %>
+<% end %>

@@ -21,7 +21,7 @@
 body {
   padding-top: 65px;
   padding-left: 50px;
-  background-image: image-url("logos/background.jpg");
+  background-color: #a3ffa9;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -61,3 +61,8 @@ input[type='checkbox'] {
   width: 25px;
   height: 50px;
 }
+  /*
+.navbar {
+  background-color: #007a00;
+}
+ */

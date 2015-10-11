@@ -3,13 +3,13 @@
 	<div class="col-md-3">
 		<h2>Step 1:</h2>
 		<h4>Select your region</h4><br/><br/>
-			<%= render partial: 'regions_dropdown_input', object: @regions_list %>
+			<%= render partial: 'surveys/regions_dropdown_input', object: @regions_list %>
 		<br/><br/>
 	</div>
 	<div class="col-md-6">
 		<h2>Step 2:</h2>
 		<h4>Select your activities <br/><small>...or leave blank for all</small></h4>
-			<%= render partial: 'activities_checkbox_input', object: @activities_list %>
+			<%= render partial: 'surveys/activities_checkbox_input', object: @activities_list %>
 		<br/><br/>
 	</div>
 	<div class="col-md-3">
@@ -20,4 +20,5 @@
 	</div>
 	<% end %>
 </div>
+
 <!-- This could eventually be a priority scale for the activities chosen <%#= f.range_field :score, :min=>0, :max=>10, :class=>"slide", :id=>"slider1"%> -->

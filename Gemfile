@@ -40,6 +40,8 @@ gem 'autoprefixer-rails'
 
 gem 'geocoder'
 
+gem 'chartkick'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

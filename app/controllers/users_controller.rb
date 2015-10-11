@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 	# POST /users
 	def create
 		@user = User.new(user_params())
+		@user.survey = Survey.default_survey
 		if current_user() and current_user().admin? and @user.save
 		  #success case
 			redirect_to users_path
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
 		else
 			render "new"
 		end
+
 	end
 
 	# GET /users/:id/edit

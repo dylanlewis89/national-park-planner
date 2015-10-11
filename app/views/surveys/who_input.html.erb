@@ -1,0 +1,12 @@
+<%#= range_field :activity_level, :min=>0, :max=>1, :class=>"slide", :id=>"slider1"%>
+<h4>Tell us who is going</h4>
+<%= form_tag(survey_who_output_path) do %>
+<h6>How many adults?</h6>
+<%= select(:survey, :num_adults, Array(1..5), selected: @num_adults) %>
+<h6>How many children?</h6>
+<%= select(:survey, :num_children, Array(1..5), selected: @num_children) %>
+<h6>What is your group's activity level?</h6>
+<%= select(:survey, :activity_level, Array(1..10), selected: @activity_level) %>
+<br/><br/>
+<%= submit_tag("Next") %>
+<% end %>

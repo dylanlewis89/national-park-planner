@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307223243) do
+ActiveRecord::Schema.define(version: 20151010171210) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20150307223243) do
   create_table "activities_gears", force: true do |t|
     t.integer "activity_id"
     t.integer "gear_id"
+  end
+
+  create_table "activities_surveys", force: true do |t|
+    t.integer "activity_id"
+    t.integer "survey_id"
   end
 
   create_table "activities_trips", force: true do |t|
@@ -65,10 +70,23 @@ ActiveRecord::Schema.define(version: 20150307223243) do
     t.string "name"
   end
 
+  create_table "regions_surveys", force: true do |t|
+    t.integer "region_id"
+    t.integer "survey_id"
+  end
+
   create_table "states", force: true do |t|
     t.string  "name"
     t.string  "abbreviation"
     t.integer "region_id"
+  end
+
+  create_table "surveys", force: true do |t|
+    t.integer "num_adults"
+    t.integer "num_children"
+    t.integer "activity_level"
+    t.integer "adventure_score"
+    t.integer "solitude_score"
   end
 
   create_table "trips", force: true do |t|
@@ -82,10 +100,11 @@ ActiveRecord::Schema.define(version: 20150307223243) do
   end
 
   create_table "users", force: true do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "role"
-    t.string "email"
+    t.string  "username"
+    t.string  "password_digest"
+    t.string  "role"
+    t.string  "email"
+    t.integer "survey_id"
   end
 
 end
