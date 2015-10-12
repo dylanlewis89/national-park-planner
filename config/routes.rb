@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/surveys', to: 'surveys#index', as: 'surveys'
 
+  get '', to: 'surveys#intro', as: 'planner'
+  
   get '/surveys/where', to: 'surveys#where_input', as: 'survey_where_input'
   post '/surveys/where', to: 'surveys#where_output', as: 'survey_where_output'
 
@@ -46,7 +48,7 @@ Rails.application.routes.draw do
   put '/trips/:id', to: 'trips#update'
   delete '/trips/:id', to: 'trips#destroy'
 
-  get '', to: 'parks#input', as: 'planner'
+  # get '', to: 'parks#input', as: 'planner'
   get '/output', to: 'parks#selector', as: 'output'
 
   get '/login', to: 'sessions#new'

@@ -1,11 +1,29 @@
 class SurveysController < ApplicationController
+  def if_logged_in(&block)
+    if current_user()
+      yield block
+    else
+      redirect_to login_path
+    end
+  end
+
   def index
     @surveys = Survey.all
   end
 
+  def intro
+    if current_user()
+      @button_text = "Get started!"
+    else
+      @button_text = "Login to get started!"
+    end
+  end
+
   def where_input
-    @regions = Region.all
-    @selected_regions = current_user().survey.regions
+    if_logged_in do
+      @regions = Region.all
+      @selected_regions = current_user().survey.regions
+    end
   end
 
   def where_output
@@ -16,10 +34,12 @@ class SurveysController < ApplicationController
   end
 
   def who_input
-    survey = current_user().survey
-    @num_adults = survey.num_adults
-    @num_children = survey.num_children
-    @activity_level = survey.activity_level
+    if_logged_in do
+      survey = current_user().survey
+      @num_adults = survey.num_adults
+      @num_children = survey.num_children
+      @activity_level = survey.activity_level
+    end
   end
 
   def who_output
@@ -32,8 +52,10 @@ class SurveysController < ApplicationController
   end
 
   def what_input
-    @activities = Activity.all
-    @selected_activities = current_user().survey.activities
+    if_logged_in do
+      @activities = Activity.all
+      @selected_activities = current_user().survey.activities
+    end
   end
 
   def what_output
@@ -44,9 +66,11 @@ class SurveysController < ApplicationController
   end
 
   def why_input
-    survey = current_user().survey
-    @adventure_score = survey.adventure_score
-    @solitude_score = survey.solitude_score
+    if_logged_in do
+      survey = current_user().survey
+      @adventure_score = survey.adventure_score
+      @solitude_score = survey.solitude_score
+    end
   end
 
   def why_output
@@ -58,5 +82,33 @@ class SurveysController < ApplicationController
   end
 
   def results
+    if_logged_in do
+      @input_regions = current_user().survey.regions
+      park_list = []
+      @input_regions.each do |region| 
+        region.states.each do |state|
+          park_list.concat(state.parks)
+        end
+      end
+      
+      @input_activities = current_user().survey.activities
+      park_scores = {}
+      park_list.each do |park|
+        park_score = 0
+        top_activity = ['',0]
+        @input_activities.each do |activity|
+          if activity_score = Rating.find_by(activity: activity, park: park).score.to_i
+            park_score += (activity_score)*2
+            if activity_score > top_activity[1]
+              top_activity[0] = activity
+              top_activity[1] = activity_score
+            end
+          end
+
+        park_scores[park] = {score: park_score, top_activity: top_activity[0]}
+        end
+      end
+      @sorted_parks = park_scores.sort_by { |a,b| b[:score] }.reverse[0..2]
+    end
   end
 end

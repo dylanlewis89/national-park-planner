@@ -1,0 +1,7 @@
+<ul>
+	<% list_region_states.each do |region| %>
+		<% region.states.each do |state| %>
+			<li><%= state.name %></li>
+		<% end %>
+	<% end %>
+</ul>

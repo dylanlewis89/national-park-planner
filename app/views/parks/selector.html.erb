@@ -1,13 +1,13 @@
 <br/>
 
 <h2>Your top parks:</h2>
-<%= render partial: 'list_top_parks', locals: {sorted_parks: @sorted_parks, activities: @input_activities} %>
+<%= render partial: 'surveys/list_top_parks', locals: {sorted_parks: @sorted_parks, activities: @input_activities} %>
 
 <br/>
 <div class="row">
 	<div class="col-md-6">
 		<h3>Selected region: <%= @input_region.name %></h3>
-		<%= render partial: 'list_region_states', object: @input_region %>
+		<%= render partial: 'surveys/list_region_states', object: [@input_region] %>
 	</div>
 	<div class="col-md-6">
 		<h3>Selected activities:</h3>

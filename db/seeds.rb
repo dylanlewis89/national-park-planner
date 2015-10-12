@@ -417,11 +417,6 @@ binoculars = wildlife_viewing.gears.create(name: 'Binoculars', description: "Pic
 sleeping_pad = camping.gears.create(name: 'Sleeping pad', description: "A three-quarter length, inflatable pad")
 sleeping_bag = camping.gears.create(name: 'Sleeping bag', description: "A synthetic bag rated to 32°F")
 
-# # Create surveys
-# Survey.create(regions: Region.all, num_adults: 1, num_children: 0, activity_level: 5, activities: Activity.all, adventure_score: 5, solitude_score: 5)
-# Survey.create(regions: [northeast, mountain_west], num_adults: 2, num_children: 3, activity_level: 6, activities: [hiking, camping, wildlife_viewing], adventure_score: 3, solitude_score: 8)
-# Survey.create(regions: [northwest, southwest], num_adults: 1, num_children: 0, activity_level: 2, activities: [skiing, guided_tours], adventure_score: 2, solitude_score: 4)
-
 # Create master user
 admin = User.create(username: 'Admin', email: 'dylanlewis89@gmail.com', password: 1234, role: 'admin', survey: Survey.default_survey)
 test = User.create(username: 'Test', email: 'test@gmail.com', password: 1234, role: 'customer', survey: Survey.default_survey)
