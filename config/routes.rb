@@ -48,9 +48,6 @@ Rails.application.routes.draw do
   put '/trips/:id', to: 'trips#update'
   delete '/trips/:id', to: 'trips#destroy'
 
-  # get '', to: 'parks#input', as: 'planner'
-  get '/output', to: 'parks#selector', as: 'output'
-
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

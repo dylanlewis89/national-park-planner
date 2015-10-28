@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		if user and user.authenticate(params[:password])
 			# user exists & provides correct password
 			session[:user_id] = user.id
-			redirect_to planner_path
+			redirect_to survey_where_input_path
 		else
 			# user doesn't exist
 			render 'new'

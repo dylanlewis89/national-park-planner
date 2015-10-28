@@ -7,12 +7,12 @@
 	<%= f.label :name %>
 	<%= f.text_field :name %>
 	</div>
-	<br/>
+<!-- 	<br/>
 	<div>
-	<%= f.label :users, "Manage travelers" %><br/>
-	<%= f.collection_check_boxes(:users, User.all, :id, :username, checked: @user_ids ) %>
+	<%#= f.label :users, "Manage travelers" %><br/>
+	<%#= f.collection_check_boxes(:users, User.all, :id, :username, checked: @user_ids ) %>
 	</div>
-	<br/>
+	<br/> -->
 	<%= f.submit :submit %>
 
 <% end %>

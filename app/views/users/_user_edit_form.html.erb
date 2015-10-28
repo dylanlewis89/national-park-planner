@@ -8,13 +8,12 @@
 	<%= f.text_field :email %>
 	</div>
 	<div>
-<!-- Figure out why password isn't pre-populating when being edited -->
 	<%= f.label :password %>
-	<%= f.text_field :password %>
+	<%= f.password_field "password" %>
 	</div>
 	<div>
 	<%= f.label :password_confirmation %>
-	<%= f.text_field :password_confirmation %>
+	<%= f.password_field "password_confirmation" %>
 	</div>
 	<br/>
 	<div>

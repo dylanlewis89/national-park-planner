@@ -44,7 +44,7 @@ class TripsController < ApplicationController
 		@trip = Trip.find(params[:id])
 		trip_data = {}
 		trip_data[:name] = params[:trip][:name]
-		trip_data[:users] = User.find(params[:trip][:users][0...-1])
+		# trip_data[:users] = User.find(params[:trip][:users][0...-1])
 		if @trip.update(trip_data)
 			render "show"
 		else

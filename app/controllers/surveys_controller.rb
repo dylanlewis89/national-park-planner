@@ -28,7 +28,11 @@ class SurveysController < ApplicationController
 
   def where_output
     survey = current_user().survey
-    survey.regions = [(Region.find(params[:input_region]))]
+    if params[:input_region]
+      survey.regions = Array(Region.find(params[:input_region]))
+    else
+      survey.regions = Region.all
+    end
     survey.save!
     redirect_to survey_who_input_path
   end
@@ -60,7 +64,11 @@ class SurveysController < ApplicationController
 
   def what_output
     survey = current_user().survey
-    survey.activities = (Activity.find(params[:input_activities]))
+    if params[:input_activities]
+      survey.activities = Array(Activity.find(params[:input_activities]))
+    else
+      survey.activities = Activity.all
+    end
     survey.save!
     redirect_to survey_why_input_path
   end

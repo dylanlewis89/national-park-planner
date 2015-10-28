@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href=<%= planner_path %>>Find a park<span class="sr-only">(current)</span></a></li>
+        <li><a href=<%= survey_where_input_path %>>Find a park<span class="sr-only">(current)</span></a></li>
         <% if current_user() %>
 	        <li><a href=<%= trips_path %>>Trips</a></li>
 	        <% if current_user().admin? %>

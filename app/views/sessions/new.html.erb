@@ -6,8 +6,9 @@
 	<br/>
 
 	<%= label_tag :password %>
-	<%= password_field_tag :password %>
+	<%= password_field_tag "password" %>
 	<br/>
 
 	<%= submit_tag "Log In" %>
 <% end %>
+Don't have a login? <%= link_to("Create an account", new_user_path) %>
