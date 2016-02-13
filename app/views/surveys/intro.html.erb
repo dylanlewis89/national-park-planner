@@ -1,5 +1,9 @@
 <div style="text-align:center;">
-<h1>Welcome to Plan My Parks!</h1>
-<h4>I'm trying to make it easier for every family to explore the incredible land that surrounds them.</h4><h4>Use this cusomized trip planner to find the perfect national park for your next vacation!</h4>
-<%= link_to @button_text, survey_where_input_path %>
+  <h4>I'm trying to make it easier for every family to explore the incredible land that surrounds them.</h4><h4>Use this cusomized trip planner to find the perfect national park for your next vacation!</h4>
+  <a class="btn btn-default" href=<%= survey_where_input_path %> role="button"><%= @button_text %></a>
+  <br/>
+  <br/>
+</div>
 <div>
+  <center><%= image_tag("slider/shenandoah_sunset.jpg", class: "img-responsive img-rounded", alt: "Shenandoah") %></center>
+</div>

@@ -33,10 +33,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem "cancan"
 
 # Use bootstrap for CSS asset pipeline from https://github.com/twbs/bootstrap-sass#a-ruby-on-rails
-gem 'bootstrap-sass', '~> 3.3.1'
+gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Recommended to be added with bootstrap from https://github.com/twbs/bootstrap-sass#a-ruby-on-rails
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '>= 5.0.0.1'
 
 gem 'geocoder'
 

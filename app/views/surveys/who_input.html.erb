@@ -7,6 +7,7 @@
 <%= select(:survey, :num_children, Array(1..5), selected: @num_children) %>
 <h6>What is your group's activity level?</h6>
 <%= select(:survey, :activity_level, Array(1..10), selected: @activity_level) %>
-<br/><br/>
-<%= submit_tag("Next") %>
+<br/><br/><br/>
+<a class="btn btn-default" href=<%= survey_where_input_path %> role="button">Back</a>
+<%= submit_tag("Next", class: "btn btn-default") %>
 <% end %>

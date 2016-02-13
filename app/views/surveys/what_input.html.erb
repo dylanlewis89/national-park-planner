@@ -1,5 +1,7 @@
 <h4>Select your activities <br/><small>...or leave blank for all</small></h4>
 <%= form_tag(survey_what_output_path) do %>
 <%= render partial: 'activities_checkbox_input', object: @activities %>
-<%= submit_tag("Next") %>
+<br/><br/>
+<a class="btn btn-default" href=<%= survey_who_input_path %> role="button">Back</a>
+<%= submit_tag("Next", class: "btn btn-default") %>
 <% end %>
