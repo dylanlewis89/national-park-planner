@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>National Park Planner</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "highcharts", "chartkick" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= render 'shared/site_nav' %>
-
-<%= yield %>
-</body>
+  <head>
+    <title>National Park Planner</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "highcharts", "chartkick" %>
+    <%= csrf_meta_tags %>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <%= render 'shared/site_nav' %>
+    <div id="main-container" class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>

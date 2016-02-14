@@ -1,5 +1,14 @@
-<h4>Select your region</h4><br/><br/>
-<%= form_tag(survey_where_output_path) do %>
-<%= render partial: 'regions_dropdown_input', object: @regions %>
-<%= submit_tag("Next") %>
-<% end %>
+<div class="row">
+  <div class="col-xs-4">
+    <h4>Select your region</h4><br/><br/>
+    <%= form_tag(survey_where_output_path) do %>
+      <%= render partial: 'regions_dropdown_input', object: @regions %>
+      <br/><br/>
+      <a class="btn btn-default" href=<%= planner_path %> role="button">Back</a>
+      <%= submit_tag("Next", class: "btn btn-default") %>
+    <% end %>
+  </div>
+  <div class="col-xs-8">
+    <center><%= image_tag("slider/olympic_seashore.jpg", class: "img-responsive img-rounded", alt: "Olympic seashore") %></center>
+  </div>
+</div>
