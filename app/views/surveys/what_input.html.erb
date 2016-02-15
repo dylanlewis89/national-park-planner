@@ -1,7 +1,12 @@
-<h4>Select your activities <br/><small>...or leave blank for all</small></h4>
-<%= form_tag(survey_what_output_path) do %>
-<%= render partial: 'activities_checkbox_input', object: @activities %>
-<br/><br/>
-<a class="btn btn-default" href=<%= survey_who_input_path %> role="button">Back</a>
-<%= submit_tag("Next", class: "btn btn-default") %>
-<% end %>
+<div class="col-md-6">
+  <h4>Select your activities <br/><small>...or leave blank for all</small></h4>
+  <%= form_tag(survey_what_output_path) do %>
+  <%= render partial: 'activities_checkbox_input', object: @activities %>
+  <br/><br/>
+  <a class="btn btn-default" href=<%= survey_who_input_path %> role="button">Back</a>
+  <%= submit_tag("Next", class: "btn btn-default") %>
+  <% end %>
+</div>
+<div class="col-md-6">
+  <center><%= image_tag("slider/rock_stars.jpg", class: "img-responsive img-rounded", alt: "Stargazing") %></center>
+</div>

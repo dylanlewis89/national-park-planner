@@ -1,7 +1,6 @@
 
 <h2>Your top parks:</h2>
 <%= render partial: 'list_top_parks', locals: {sorted_parks: @sorted_parks, activities: @input_activities} %>
-<br/><br/>
 <center><a class="btn btn-default" href=<%= planner_path %> role="button">Take the survey again!</a></center>
 <!-- <div class="row">
 	<div class="col-md-6">
@@ -13,3 +12,5 @@
 		<%#= render partial: 'shared/list_activities', object: @input_activities %>
 	</div>
 </div> -->
+<br/>
+<center><%= image_tag("slider/crater_lake.jpg", class: "img-responsive img-rounded", alt: "Crater Lake") %></center>

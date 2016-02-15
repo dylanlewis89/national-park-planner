@@ -1,11 +1,16 @@
-<h4>Tell us why you're going</h4>
-<br/>
-<%= form_tag(survey_why_output_path) do %>
-<h6>How much adventure are you looking for?</h6>
-<%= select(:survey, :adventure_score, Array(1..10), selected: @adventure_score) %>
-<h6>How much solitude are you looking for?</h6>
-<%= select(:survey, :solitude_score, Array(1..10), selected: @solitude_score) %>
-<br/><br/><br/>
-<a class="btn btn-default" href=<%= survey_what_input_path %> role="button">Back</a>
-<%= submit_tag("Submit!", class: "btn btn-default") %>
-<% end %>
+<div class="col-md-4">
+  <h4>Tell us why you're going</h4>
+  <br/>
+  <%= form_tag(survey_why_output_path) do %>
+  <h6>How much adventure are you looking for?</h6>
+  <%= select(:survey, :adventure_score, Array(1..10), selected: @adventure_score) %>
+  <h6>How much solitude are you looking for?</h6>
+  <%= select(:survey, :solitude_score, Array(1..10), selected: @solitude_score) %>
+  <br/><br/><br/>
+  <a class="btn btn-default" href=<%= survey_what_input_path %> role="button">Back</a>
+  <%= submit_tag("Submit!", class: "btn btn-default") %>
+  <% end %>
+</div>
+<div class="col-md-8">
+  <center><%= image_tag("slider/arches.jpg", class: "img-responsive img-rounded", alt: "Arches") %></center>
+</div>
