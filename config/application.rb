@@ -21,3 +21,7 @@ module Pmp
     # config.i18n.default_locale = :de
   end
 end
+
+# config.generators do |g|
+#   g.test_framework :rspec
+# end

@@ -44,6 +44,8 @@ gem 'geocoder'
 
 gem 'chartkick'
 
+gem 'require_all'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -59,6 +61,10 @@ gem "paperclip", "~> 4.2"
 group :development do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'database_cleaner'
 end
 
 group :production do
