@@ -65,6 +65,7 @@ group :development do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :production do

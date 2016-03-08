@@ -21,7 +21,6 @@ describe ActivitiesController do
       activity.save!
       subject
       expect(assigns(:activity)).to eq activity
-      p @controller.params
     end
   end
 
